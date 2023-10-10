@@ -23,15 +23,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('FIAP'),
         ),
-        body: Card(
-          child: Column(
-            children: <Widget>[
-              blueText('FIAP', color: Colors.red),
-              blueText('hotequil'),
-              blueText('deborah'),
-            ],
-          ),
-        ),
+        body: restaurantList(),
         floatingActionButton: FloatingActionButton(
           tooltip: 'Floating button',
           child: const Icon(Icons.car_crash),
@@ -42,6 +34,34 @@ class MyApp extends StatelessWidget {
           },
         ),
       ),
+    );
+  }
+
+  restaurantList(){
+    return Card(
+        child: ListView(
+          children: [
+            tile(
+                'Tip Tim Lanches',
+                'R. República Argentina, 74 - Ponta Aguda, Blumenau - SC, 89050-100',
+                '9.5'
+            ),
+            tile(
+                'Burger Bravo',
+                'R. Francisco Vahldieck, 3245 - Fortaleza, Blumenau - SC, 89057-001',
+                '9'
+            ),
+          ],
+        )
+    );
+  }
+
+  tile(String title, String subtitle, String rating){
+    return ListTile(
+      title: Text(title),
+      subtitle: Text(subtitle),
+      leading: const Icon(Icons.place),
+      trailing: Text(rating),
     );
   }
 
