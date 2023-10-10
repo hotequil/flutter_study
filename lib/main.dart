@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'my_home_page.dart';
@@ -18,13 +19,27 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: Card(
-        child: Column(
-          children: <Widget>[
-            blueText('FIAP', color: Colors.red),
-            blueText('hotequil'),
-            blueText('deborah'),
-          ],
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('FIAP'),
+        ),
+        body: Card(
+          child: Column(
+            children: <Widget>[
+              blueText('FIAP', color: Colors.red),
+              blueText('hotequil'),
+              blueText('deborah'),
+            ],
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          tooltip: 'Floating button',
+          child: const Icon(Icons.car_crash),
+          onPressed: (){
+            if (kDebugMode) {
+              print('Button clicked');
+            }
+          },
         ),
       ),
     );
