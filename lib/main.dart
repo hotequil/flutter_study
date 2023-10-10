@@ -2,7 +2,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'my_home_page.dart';
-// TODO: remove -> const MyHomePage(title: 'Flutter study')
 
 void main() {
   runApp(const MyApp());
@@ -19,21 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('FIAP'),
-        ),
-        body: restaurantList(),
-        floatingActionButton: FloatingActionButton(
-          tooltip: 'Floating button',
-          child: const Icon(Icons.car_crash),
-          onPressed: (){
-            if (kDebugMode) {
-              print('Button clicked');
-            }
-          },
-        ),
-      ),
+      home: const MyHomePage(title: 'Flutter study'),
     );
   }
 
